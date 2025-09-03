@@ -1,0 +1,10 @@
+services:
+  explorer:
+    image: kuzudb/explorer:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./shoes.kuzu:/database/
+    environment:
+      - MODE=READ_ONLY
+      - KUZU_FILE=shoes.kuzu
