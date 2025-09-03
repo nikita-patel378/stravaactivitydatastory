@@ -21,10 +21,10 @@ def hours_to_interval(hours_float):
 
 # PostgreSQL connection details
 conn = psycopg2.connect(
-    host="host",
-    user="user",
-    password="password",
-    database="database",
+    host="localhost",
+    user="postgres",
+    password="postgres",
+    database="shoemiletracker",
     port="3333"
 )
 cursor = conn.cursor()
@@ -92,15 +92,14 @@ df = pd.DataFrame(activities)
 df['date'] = pd.to_datetime(df['start_date_local']).dt.date
 df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
 
-# Set date filter to not make repeated requests
-# Filter for activities after 1/1/2025
-df = df[df['date'] > '2025-01-01']
+# Filter for activities after 8/17/2025
+df = df[df['date'] > '2025-08-17']
 
 # Apply necessary transformations
 df['elapsed_time'] = df['elapsed_time'].apply(
     lambda x: hours_to_interval(x / 3600))  # Convert seconds to hours, then to interval string
 df['distance'] = df['distance'] * 0.000621371  # Convert meters to miles
-df['ShoeId'] = df['type'].map({'Run': xx, 'Walk': xx, 'Hike': xx}) # sets defaults for shoes being worn for each activity
+df['ShoeId'] = df['type'].map({'Run': 15, 'Walk': 12, 'Hike': 7})
 
 # Reorder columns to match database table structure
 desired_column_order = ['id', 'ShoeId', 'type', 'distance', 'elapsed_time', 'start_date_local']
@@ -131,11 +130,12 @@ for index, row in df.iterrows():
         logging.info(f"Inserting activity with ID: {row['id']}")
         cursor.execute("""
             INSERT INTO Activities (ActivityId, ShoeId, Type, Distance, Time, Date, WithDog , dogname)
-            VALUES (%s, %s, %s, %s, %s, %s, 't', 'dogname');
-        """, (row['id'], row['ShoeId'], row['type'], row['distance'], row['elapsed_time'], row['start_date_local'])) 
+            VALUES (%s, %s, %s, %s, %s, %s, 't', 'Laika');
+        """, (row['id'], row['ShoeId'], row['type'], row['distance'], row['elapsed_time'], row['start_date_local']))
     else:
         logging.info(f"Activity with ID: {row['id']} already exists in the database.")
 
 conn.commit()
 logging.info("Data insertion complete!")
 conn.close()
+
