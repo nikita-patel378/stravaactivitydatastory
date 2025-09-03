@@ -1,20 +1,51 @@
 # Strava Activity Data Tracking
 
-After adopting my dog, I realized that I would be engaging in a variety of activities—running, hiking, and long walks. To ensure I’m using the right shoes and preventing injuries, I needed a way to track my shoe mileage over time.
+## 📌 Motivation
+After adopting my dog, I realized I needed to keep track of my shoe mileage to prevent unintended foot injuries.  
 
-This project includes the **Strava Data ETL Script** that I use to collect activity data from Strava and load it into a **PostgreSQL** database. With this data, I can:
+What started as simple shoe tracking became much more:
+- Monitoring activities I do with my dog (walks, hikes, runs).
+- Tracking my training as a marathoner, including race paces and split analysis.
+- Adding shoe details into a **graph database** to visualize patterns in my shoe choices.
 
-- Explore various activities I've done with my dog or by myself.
-- Keep track of the mileage on each pair of shoes to prevent overuse injuries.
+This project combines storytelling and data: it helps me understand my own training while capturing the journey I’ve shared with my dog. 🐶🏃‍♀️
 
-## Features
-- Extracts activity data from Strava's API.
-- Loads structured data into a PostgreSQL database.
-- Enables analysis of activity trends and shoe mileage tracking.
+---
 
-## Requirements
-- Python 3.x
-- PostgreSQL
-- Strava API credentials
+## ⚙️ Tech Stack
+- **Python**
+- **Strava API**
+- **PostgreSQL**
+- **Kùzu (Graph Database)**
 
-This project helps me stay injury-free while enjoying an active lifestyle with my dog! 🐶🏃‍♂️ It also helps me keep track of my story with my dog since I have maintained the postgres database since I've adopted her. 
+---
+
+## 🚀 Features
+- **Data Extraction**: Pulls activity data from the Strava API.
+- **ETL Pipeline**: Cleans and loads structured data into PostgreSQL.
+- **Shoe Mileage Tracking**: Tracks mileage per shoe to prevent overuse injuries.
+- **Activity Insights**: Separates activities with my dog vs. solo marathon training.
+- **Graph Visualization**: Stores shoe details in Kùzu to analyze shoe usage patterns.
+ 
+
+---
+
+## 🛠️ Requirements
+- Python 3.x  
+- PostgreSQL  
+- [Strava API credentials](https://developers.strava.com/docs/getting-started/)  
+
+---
+
+## 💡 Why This Project Matters
+- **Prevent injuries** by retiring shoes at the right mileage.  
+- **Training insights** for marathon prep (track pace trends, splits, and race progress).  
+- **Dog vs. solo activities** (quickly filter and compare my adventures with my dog vs. personal training).  
+- **Graph insights** to see patterns in brands, models, and how I choose shoes over time.  
+
+---
+
+## ❤️ Acknowledgments
+- [Strava API](https://developers.strava.com/) for providing activity data.  
+- My dog, Laika, for inspiring this project. 🐾
+
