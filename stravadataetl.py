@@ -22,9 +22,9 @@ def hours_to_interval(hours_float):
 # PostgreSQL connection details
 conn = psycopg2.connect(
     host="localhost",
-    user="postgres",
-    password="postgres",
-    database="shoemiletracker",
+    user="user",
+    password="password",
+    database="database",
     port="3333"
 )
 cursor = conn.cursor()
