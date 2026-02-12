@@ -5,6 +5,10 @@ import json
 import time
 import configparser
 import logging
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Initialize logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -21,11 +25,11 @@ def hours_to_interval(hours_float):
 
 # PostgreSQL connection details
 conn = psycopg2.connect(
-    host="localhost",
-    user="user",
-    password="password",
-    database="database",
-    port="3333"
+    host=os.os.getenv('DB_HOST'),
+    user=os.getenv('DB_USER'),
+    password=os.getenv('DB_PASSWORD')
+    database=os.getenv('DB_NAME'),
+    port=os.getenv('DB_PORT')
 )
 cursor = conn.cursor()
 
