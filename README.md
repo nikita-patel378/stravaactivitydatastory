@@ -28,7 +28,7 @@ This project combines storytelling and data: it helps me understand my own train
 - **Shoe Mileage Tracking**: Tracks mileage per shoe to prevent overuse injuries.
 - **Activity Insights**: Separates activities with my dog vs. solo marathon training.
 - **Graph Visualization**: Stores shoe details in Kùzu to analyze shoe usage patterns.
-- **Tool Calling: Uses BAML to use natural language for postgres queries for run summaries and shoe mileage.
+- **Tool Calling**: Uses BAML to use natural language for postgres queries for run summaries and shoe mileage.
  
 
 ---
