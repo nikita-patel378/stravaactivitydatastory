@@ -16,7 +16,9 @@ This project combines storytelling and data: it helps me understand my own train
 - **Python**
 - **Strava API**
 - **PostgreSQL**
-- **Kùzu (Graph Database)**
+- **Kùzu (Graph Database)** (Archived)
+- **Neo4j (Graph Database)**
+- **BAML**
 
 ---
 
@@ -26,6 +28,7 @@ This project combines storytelling and data: it helps me understand my own train
 - **Shoe Mileage Tracking**: Tracks mileage per shoe to prevent overuse injuries.
 - **Activity Insights**: Separates activities with my dog vs. solo marathon training.
 - **Graph Visualization**: Stores shoe details in Kùzu to analyze shoe usage patterns.
+- **Tool Calling: Uses BAML to use natural language for postgres queries for run summaries and shoe mileage.
  
 
 ---
@@ -33,7 +36,9 @@ This project combines storytelling and data: it helps me understand my own train
 ## 🛠️ Requirements
 - Python 3.x  
 - PostgreSQL  
-- [Strava API credentials](https://developers.strava.com/docs/getting-started/)  
+- [Strava API credentials](https://developers.strava.com/docs/getting-started/)
+- Neo4j
+- BAML by BoundaryML
 
 ---
 
