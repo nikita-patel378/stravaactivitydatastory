@@ -18,7 +18,7 @@ This project combines storytelling and data: it helps me understand my own train
 - **PostgreSQL**
 - **Kùzu (Graph Database)** (Archived)
 - **Neo4j (Graph Database)**
-- **BAML**
+- **BAML by BoundaryML**
 
 ---
 
